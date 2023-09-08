@@ -1,0 +1,1 @@
+{"host":"test-endpoint-3coulnzwvyobqlekdex6.595186449594.us-east-1.redshift-serverless.amazonaws.com","port":5439,"schema":"public","database":"test","password":"JpfhOpMxvDukA4o1SHO0S5Wf","username":"admin","tunnel_method":{"tunnel_method":"NO_TUNNEL"},"uploading_method":{"method":"Standard"}}
