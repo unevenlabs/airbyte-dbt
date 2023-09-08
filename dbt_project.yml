@@ -1,0 +1,88 @@
+name: airbyte_utils
+version: '1.0'
+config-version: 2
+profile: normalize
+model-paths:
+- models
+docs-paths:
+- docs
+analysis-paths:
+- analysis
+test-paths:
+- tests
+seed-paths:
+- data
+macro-paths:
+- macros
+target-path: ../build
+log-path: ../logs
+packages-install-path: /dbt
+clean-targets:
+- build
+- dbt_modules
+quoting:
+  database: true
+  schema: false
+  identifier: true
+models:
+  +transient: false
+  +pre-hook: SET enable_case_sensitive_identifier to TRUE
+  airbyte_utils:
+    +materialized: table
+    generated:
+      airbyte_ctes:
+        +tags: airbyte_internal_cte
+        +materialized: ephemeral
+      airbyte_incremental:
+        +tags: incremental_tables
+        +materialized: incremental
+        +on_schema_change: sync_all_columns
+      airbyte_tables:
+        +tags: normalized_tables
+        +materialized: table
+      airbyte_views:
+        +tags: airbyte_internal_views
+        +materialized: view
+dispatch:
+- macro_namespace: dbt_utils
+  search_order:
+  - airbyte_utils
+  - dbt_utils
+vars:
+  json_column: _airbyte_data
+  models_to_source:
+    collection_mints_ab1: public._airbyte_raw_collection_mints
+    collection_mints_ab2: public._airbyte_raw_collection_mints
+    collection_mints_stg: public._airbyte_raw_collection_mints
+    collection_mints_scd: public._airbyte_raw_collection_mints
+    collection_mints: public._airbyte_raw_collection_mints
+    api_keys_ab1: public._airbyte_raw_api_keys
+    api_keys_ab2: public._airbyte_raw_api_keys
+    api_keys_stg: public._airbyte_raw_api_keys
+    api_keys_scd: public._airbyte_raw_api_keys
+    api_keys: public._airbyte_raw_api_keys
+    cross_posting_orders_ab1: public._airbyte_raw_cross_posting_orders
+    cross_posting_orders_ab2: public._airbyte_raw_cross_posting_orders
+    cross_posting_orders_stg: public._airbyte_raw_cross_posting_orders
+    cross_posting_orders_scd: public._airbyte_raw_cross_posting_orders
+    cross_posting_orders: public._airbyte_raw_cross_posting_orders
+    executions_ab1: public._airbyte_raw_executions
+    executions_ab2: public._airbyte_raw_executions
+    executions_stg: public._airbyte_raw_executions
+    executions_scd: public._airbyte_raw_executions
+    executions: public._airbyte_raw_executions
+    daily_api_usage_ab1: public._airbyte_raw_daily_api_usage
+    daily_api_usage_ab2: public._airbyte_raw_daily_api_usage
+    daily_api_usage_stg: public._airbyte_raw_daily_api_usage
+    daily_api_usage_scd: public._airbyte_raw_daily_api_usage
+    daily_api_usage: public._airbyte_raw_daily_api_usage
+    execution_results_ab1: public._airbyte_raw_execution_results
+    execution_results_ab2: public._airbyte_raw_execution_results
+    execution_results_stg: public._airbyte_raw_execution_results
+    execution_results_scd: public._airbyte_raw_execution_results
+    execution_results: public._airbyte_raw_execution_results
+    collections_ab1: public._airbyte_raw_collections
+    collections_ab2: public._airbyte_raw_collections
+    collections_stg: public._airbyte_raw_collections
+    collections_scd: public._airbyte_raw_collections
+    collections: public._airbyte_raw_collections

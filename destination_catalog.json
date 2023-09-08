@@ -1,0 +1,728 @@
+{
+  "streams": [
+    {
+      "stream": {
+        "name": "collection_mints",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "max_mints_per_wallet": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "allowlist_id": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "end_time": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "collection_id": {
+              "type": "string"
+            },
+            "start_time": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "stage": {
+              "type": "string"
+            },
+            "token_id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "price": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "max_supply": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "details": {
+              "type": "string"
+            },
+            "currency": {
+              "type": "string"
+            },
+            "id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "api_keys",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "website": {
+              "type": "string"
+            },
+            "active": {
+              "type": "boolean"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "ips": {
+              "type": "string"
+            },
+            "app_name": {
+              "type": "string"
+            },
+            "tier": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "permissions": {
+              "type": "string"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "origins": {
+              "type": "string"
+            },
+            "key": {
+              "type": "string"
+            },
+            "email": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "key"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "key"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "cross_posting_orders",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "schema": {
+              "type": "string"
+            },
+            "kind": {
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "source": {
+              "type": "string"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "orderbook": {
+              "type": "string"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "status_reason": {
+              "type": "string"
+            },
+            "order_id": {
+              "type": "string"
+            },
+            "raw_data": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "executions",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "side": {
+              "type": "string"
+            },
+            "quantity": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "api_key": {
+              "type": "string"
+            },
+            "calldata": {
+              "type": "string"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            },
+            "from": {
+              "type": "string"
+            },
+            "id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "to": {
+              "type": "string"
+            },
+            "request_data": {
+              "type": "string"
+            },
+            "user": {
+              "type": "string"
+            },
+            "value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "order_id": {
+              "type": "string"
+            },
+            "request_id": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "daily_api_usage",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "route": {
+              "type": "string"
+            },
+            "status_code": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "api_key": {
+              "type": "string"
+            },
+            "api_calls_count": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "points": {
+              "airbyte_type": "integer",
+              "type": "number"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "execution_results",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "error_message": {
+              "type": "string"
+            },
+            "api_key": {
+              "type": "string"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "tx_hash": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "id": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "step_id": {
+              "type": "string"
+            },
+            "request_id": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    },
+    {
+      "stream": {
+        "name": "collections",
+        "json_schema": {
+          "type": "object",
+          "properties": {
+            "metadata": {
+              "type": "string"
+            },
+            "new_royalties": {
+              "type": "string"
+            },
+            "floor_sell_source_id_int": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "non_flagged_floor_sell_id": {
+              "type": "string"
+            },
+            "token_id_range": {
+              "type": "string"
+            },
+            "normalized_floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "top_buy_maker": {
+              "type": "string"
+            },
+            "normalized_floor_sell_source_id_int": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "token_set_id": {
+              "type": "string"
+            },
+            "all_time_volume": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "last_metadata_sync": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "day30_volume": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day1_volume_change": {
+              "type": "number"
+            },
+            "id": {
+              "type": "string"
+            },
+            "slug": {
+              "type": "string"
+            },
+            "top_buy_source_id_int": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "index_metadata": {
+              "type": "boolean"
+            },
+            "floor_sell_maker": {
+              "type": "string"
+            },
+            "non_flagged_floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day7_volume_change": {
+              "type": "number"
+            },
+            "contract": {
+              "type": "string"
+            },
+            "community": {
+              "type": "string"
+            },
+            "non_flagged_floor_sell_valid_between": {
+              "type": "string"
+            },
+            "normalized_floor_sell_id": {
+              "type": "string"
+            },
+            "day1_volume": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "name": {
+              "type": "string"
+            },
+            "marketplace_fees": {
+              "type": "string"
+            },
+            "all_time_rank": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day7_volume": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "created_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "_ab_cdc_deleted_at": {
+              "type": "string"
+            },
+            "floor_sell_source_id": {
+              "type": "string"
+            },
+            "non_flagged_floor_sell_maker": {
+              "type": "string"
+            },
+            "token_count": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day30_floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "updated_at": {
+              "format": "date-time",
+              "airbyte_type": "timestamp_with_timezone",
+              "type": "string"
+            },
+            "top_buy_id": {
+              "type": "string"
+            },
+            "owner_count": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day1_floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "non_flagged_floor_sell_source_id_int": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "floor_sell_valid_between": {
+              "type": "string"
+            },
+            "creator": {
+              "type": "string"
+            },
+            "minted_timestamp": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "top_buy_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "non_flagged_token_set_id": {
+              "type": "string"
+            },
+            "_ab_cdc_lsn": {
+              "type": "number"
+            },
+            "normalized_floor_sell_maker": {
+              "type": "string"
+            },
+            "royalties_bps": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "payment_tokens": {
+              "type": "string"
+            },
+            "top_buy_valid_between": {
+              "type": "string"
+            },
+            "floor_sell_id": {
+              "type": "string"
+            },
+            "day30_rank": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "royalties": {
+              "type": "string"
+            },
+            "day30_volume_change": {
+              "type": "number"
+            },
+            "_ab_cdc_updated_at": {
+              "type": "string"
+            },
+            "day7_rank": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day1_rank": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "day7_floor_sell_value": {
+              "airbyte_type": "integer",
+              "type": "number"
+            },
+            "normalized_floor_sell_valid_between": {
+              "type": "string"
+            }
+          }
+        },
+        "supported_sync_modes": [
+          "full_refresh",
+          "incremental"
+        ],
+        "source_defined_cursor": true,
+        "default_cursor_field": [
+          "_ab_cdc_lsn"
+        ],
+        "source_defined_primary_key": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "sync_mode": "incremental",
+      "cursor_field": [
+        "_ab_cdc_lsn"
+      ],
+      "destination_sync_mode": "append_dedup",
+      "primary_key": [
+        [
+          "id"
+        ]
+      ]
+    }
+  ]
+}

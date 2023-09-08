@@ -1,0 +1,15 @@
+version: 2
+sources:
+- name: public
+  quoting:
+    database: true
+    schema: false
+    identifier: false
+  tables:
+  - name: _airbyte_raw_api_keys
+  - name: _airbyte_raw_collection_mints
+  - name: _airbyte_raw_collections
+  - name: _airbyte_raw_cross_posting_orders
+  - name: _airbyte_raw_daily_api_usage
+  - name: _airbyte_raw_execution_results
+  - name: _airbyte_raw_executions
